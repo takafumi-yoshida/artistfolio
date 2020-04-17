@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: artistfolio_production
-  username: artistfolio
-  password: <%= ENV['ARTISTFOLIO_DATABASE_PASSWORD'] %>
+  username: root
+  password:  <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
