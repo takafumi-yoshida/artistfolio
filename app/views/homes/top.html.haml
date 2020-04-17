@@ -1,0 +1,11 @@
+.home-wrapper
+  = render "shares/header"
+  .home-wrapper__main
+    .home-wrapper__main__heading
+      %h3 People are natural born artist.
+      %h3　人は生まれながらにして芸術家である。
+    .home-wrapper__main__btns
+      = link_to new_user_registration_path, class:"main-btn_num1" do
+        Create your folio
+      = link_to homes_path, class:"main-btn_num2" do
+        View Artist & Art

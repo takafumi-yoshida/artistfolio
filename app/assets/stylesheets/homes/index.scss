@@ -1,0 +1,65 @@
+.home-index_wrapper {
+  &__slide {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    border: 1px solid rgb(5, 5, 5);
+    box-sizing: border-box;
+    background-color: rgb(10, 10, 10);
+    .slide-show {
+      height: 300px;
+      width: 80%;
+      margin: 0 auto;
+      background-color: black;
+      overflow: hidden;
+      .slide {
+        display: none;
+        height: 100%;
+        background-color: black;
+        &__center {
+          margin: 0 auto;
+          height: 100%;
+          display: flex;
+          &__photo {
+            margin: 0 auto;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            img {
+              max-width: 700px;
+              min-height: 100%;;
+              max-height: 100%;
+            }
+          }
+          &__info {
+            width: 300px;
+            height: 100%;
+            margin: 0 auto;
+            color: white;
+            &__title {
+              border-bottom: 1px solid rgb(250, 248, 248);
+              margin: 20px auto 0;
+              text-align: left;
+              font-family: $mainFont;
+              font-size: 18px;
+              font-weight: 900;
+              
+              padding-left: 10px;
+            }
+            &__name {
+              margin-top: 80px;
+              text-align: center;
+              font-size: 25px;
+              font-family: $mainFont;
+              font-weight: 900;
+              letter-spacing: 3px;
+            }
+  
+          }
+         
+          }
+        }
+
+    }
+  }
+}

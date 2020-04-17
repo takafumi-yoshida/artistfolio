@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Corben:700);
+@import url(https://fonts.googleapis.com/earlyaccess/kokoro.css);
+@import url(https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap);
+
+$mainColor:rgb(22, 21, 21);
+$mainFont:"Toppan Bunkyu Midashi Mincho","凸版文久見出し明朝";
+
+
+@import "config/reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "share/header";
+@import "homes/top";
+@import "homes/index";
+@import "devise/registrations";
+@import "devise/sessions";
+@import "users/show.scss";
+@import "users/edit.scss";

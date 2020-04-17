@@ -1,0 +1,47 @@
+@mixin main-btn_size {
+  display: block;
+  width: 250px;
+  background-color: rgba(247, 185, 185, 0.15);
+  color: wheat;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  &:hover {
+    background-color: rgba(247, 185, 185, 0.3);
+    transition: 0.5s;
+  }
+}
+
+.home-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/homepic.jpg);
+  background-size: cover;
+  overflow: hidden;
+  &__main {
+    height: 300px;
+    &__heading {
+      font-size: 35px;
+      width: 700px;
+      height: 110px;
+      color: whitesmoke;
+      margin: 80px 100px 90px 100px;
+      box-sizing: border-box;
+      font-family: 'TsukuARdGothic-Regular',sans-serif;
+    }
+    .home-wrapper__main__btns{
+      width: 305px;
+      margin-left: 250px;
+      .main-btn_num1 {
+        @include main-btn_size;
+        border: 1px solid rgba(87, 111, 248, 0.856);
+      }
+      .main-btn_num2 {
+        @include main-btn_size;
+        margin-top: 45px;
+        border: 1px solid rgba(248, 87, 87, 0.856);
+      }
+    }
+  }
+}

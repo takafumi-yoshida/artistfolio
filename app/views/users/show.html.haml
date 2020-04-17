@@ -1,0 +1,47 @@
+#artist_show
+  #artist_show__header
+    %p{id: "artist_show__header__artist_name"} 
+      = @user.artistname
+  #artist_show__main
+    #artist_show__main__side
+      %ul{id:"side_lists"}
+        %li{class:"side_list", id:"side_list0"} Home
+        %li{class:"side_list", id:"side_list1"} Galleries
+        %li{class:"side_list", id:"side_list2"} News
+        %li{class:"side_list", id:"side_list3"} Contact
+        -if @user.id == current_user.id
+          %li{class:"side_list", id:"side_list4"} 
+            = link_to edit_user_path do
+              edit
+      %p{id:"side_artistfolio-logo"} 
+        = link_to root_path do
+          @artistfolio
+    #artist_show__main__center
+      #artist_information
+        #artist_information__text
+          %ul{id:"information__lists"}
+            %li{class:"infomation_list", id:"information__lists__0"} 
+              %p Name : 
+              %span 
+                = @user.realname
+            %li{class:"infomation_list", id:"information__lists__1"} 
+              %p Age :
+              %span 
+                = @user.age
+            %li{class:"infomation_list", id:"information__lists__2"} 
+              %p Profession :
+              %span 
+                = @user.profession
+            %li{class:"infomation_list", id:"information__lists__3"} 
+              %p Birthplace : 
+              %span 
+                = @user.birthplace
+            %li{class:"infomation_list", id:"information__lists__4"} 
+              %p ActivityBase : 
+              %span 
+                = @user.activityBase
+        #artist_information__image
+          = image_tag "https://cdn.pixabay.com/photo/2019/10/23/20/40/landscape-4572804__480.jpg"
+      #artist_introduction
+        #artist_introduction__box
+          = @user.introduction

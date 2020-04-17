@@ -1,0 +1,169 @@
+@mixin infomation_list {
+  border: none;
+  color: white;
+  padding-top: 8px;
+  margin-left: 10px;
+  background-color: $mainColor;
+  font-family: $mainFont;
+  cursor: pointer;
+  &::placeholder{
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.952);
+  }
+}
+
+#artist_edit {
+  height: 100%;
+  width: 100%;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    padding: 10px 10% 0px;
+    box-sizing: border-box;
+    border-bottom: 2px solid gray;
+    display: flex;
+    
+    &__artist_name {
+      font-size: 40px;
+      color: rgb(250, 245, 245);
+      
+      #user_artistname {
+        color: white;
+        border: none;
+        width: 450px;
+        cursor: pointer;
+        background-color: $mainColor;
+      }
+    }
+    &__title {
+      color: rgb(145, 95, 75);
+      font-size: 20px;
+      padding-top: 20px;
+    }
+  }
+  &__main {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    &__side {
+      margin-top: 30px;
+      width: 20%;
+      height: 600px;
+      #side_artistfolio-btn {
+        display: block;
+        margin: 40px;
+        text-align: center;
+        line-height: 400px;
+        width: 100%;
+        height: 270px;
+        font-size: 130px;
+        // border: 1px solid red;
+        label {
+          border-radius: 100px;
+          i {
+            color: rgb(145, 120, 75);
+            cursor: pointer;
+            &:hover {
+              color: rgb(184, 150, 88);
+            }
+          }
+        }
+      }
+      #side_artistfolio-logo {
+        margin-top: 230px;
+        font-size: 15px;
+        a {
+          margin-left: 140px;
+          color: rgba(194, 63, 63, 0.856);
+          border-bottom: 1px solid rgba(194, 63, 63, 0.856);
+        }
+        
+      }
+    }
+    &__center {
+      margin-left: 10%;
+      max-height: 635px;
+      width: 70%;
+      #artist_information {
+        display: flex;
+        width: 100%;
+        height: 280px;
+        border-bottom: 1px solid gray;
+        &__text {
+          width: 40%;
+          font-family: 'Comic Neue', cursive;
+          #information__lists {
+            height: 100%;
+            padding: 30px 0 0 20%;
+            box-sizing: border-box;
+            .infomation_list {
+              display: flex;
+              height: 30px;
+              margin-bottom: 10px;
+              border-bottom: 1px solid grey;
+               p {
+                height: 100%;
+                padding-left: 20px;
+                line-height: 39px;
+                color: white;
+                white-space: nowrap;
+               }
+               #real_name {
+                 width: 70%;
+                 @include infomation_list();
+               }
+               #age {
+                width: 80%;
+                @include infomation_list();
+              }
+              #profession {
+                width: 65%;
+                @include infomation_list();
+              }
+              #birthplace {
+                width: 65%;
+                @include infomation_list();
+              }
+              #activityBase {
+                width: 60%;
+                @include infomation_list();
+              }
+            }
+          }
+        }
+        &__image {
+          margin-left: 50px;
+          img {
+            min-height: 260px;
+            max-height: 260px;
+            max-width: 390px;
+          } 
+        }
+      }
+      #artist_introduction {
+        font-size: 15px;
+        width: 100%;
+        margin: 0 auto;
+        
+        #introduction {
+          width: 70%;
+          height: 100%;
+          background-color: $mainColor;
+          color: white;
+          resize: none;
+          padding: 50px 0 0 100px;
+          border: none;
+          cursor: pointer;
+          white-space: pre-wrap;
+          
+          &::placeholder{
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.952);
+          }
+        }
+      }
+    }
+  }
+}

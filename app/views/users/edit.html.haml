@@ -1,0 +1,41 @@
+#artist_edit
+  = form_with model:@user, local:true do |f|
+    #artist_edit__header
+      %p{id: "artist_edit__header__artist_name"} 
+        = f.text_field :artistname, pattern: "^([a-zA-Z0-9｡-ﾟ -\/:-@\[-`\{-\~ぁ-ゞ一-龠｡-ﾟァ-ヶー　]{1,10})$", title: "10文字以内で入力して下さい。", autocomplete: "off",required: true
+      %h1{id: "artist_edit__header__title"} 
+        Edit Page
+    #artist_edit__main
+      #artist_edit__main__side
+        #side_artistfolio-btn
+          %label{for:"submit_btn"}
+            = icon 'fas', 'arrow-circle-left'
+        %p{id:"side_artistfolio-logo"} 
+          = link_to root_path do
+            @artistfolio
+      #artist_edit__main__center
+        #artist_information
+          #artist_information__text
+            %ul{id:"information__lists"}
+              %li{class:"infomation_list", id:"information__lists__0"} 
+                %p Name : 
+                = f.text_field :realname, pattern: "^([a-zA-Z ]{1,14}|([ぁ-ゞ一-龠｡-ﾟァ-ヶー　]{1,10}))$", title: "全角10文字以内 もしくは 半角14文字以内で入力して下さい。",maxlength: "14",placeholder: "本名を入力してください（任意）", autocomplete: "off",id: "real_name"
+              %li{class:"infomation_list", id:"information__lists__1"} 
+                %p Age :
+                = f.text_field :age, pattern: "^([0-9]{1,3})$", title: "半角数字(3桁以内)で入力してください",maxlength: "3",placeholder: "年齢を入力して下さい（任意）", autocomplete: "off",id: "age"
+              %li{class:"infomation_list", id:"information__lists__2"} 
+                %p Profession :
+                = f.text_field :profession,maxlength: "12",placeholder: "職業を入力して下さい（任意）", autocomplete: "off",id: "profession"
+              %li{class:"infomation_list", id:"information__lists__3"} 
+                %p Birthplace : 
+                = f.text_field :birthplace,maxlength: "12",placeholder: "出身地を入力して下さい（任意）", autocomplete: "off",id: "birthplace"
+              %li{class:"infomation_list", id:"information__lists__4"} 
+                %p ActivityBase : 
+                = f.text_field :activityBase,maxlength: "12",placeholder: "活動拠点を入力して下さい（任意）", autocomplete: "off",id: "activityBase"
+          #artist_information__image
+            = image_tag "https://cdn.pixabay.com/photo/2019/10/23/20/40/landscape-4572804__480.jpg"
+        #artist_introduction
+          #artist_introduction__box
+            = f.text_area :introduction,placeholder: "好きなことをご自由にお書き下さい。",rows: "13", autocomplete: "off",id: "introduction"
+        = f.submit style: "display:none;", id:"submit_btn"
+          

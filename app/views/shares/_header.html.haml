@@ -1,0 +1,19 @@
+.share_wrapper__header
+  = link_to root_path, class: "share_header-log" do
+    %p Artistfolio
+  %ul{class: "share_wrapper__header__right"}
+    -if user_signed_in?
+      %li 
+        = link_to user_path(current_user.id), class:"share_header-btn" do
+          =current_user.artistname
+      %li 
+        = link_to destroy_user_session_path, method: :delete, class:"share_header-btn" do
+          ログアウト
+    -else
+      %li 
+        = link_to new_user_session_path, class:"share_header-btn" do
+          ログイン
+      %li 
+        = link_to new_user_registration_path, class:"share_header-btn" do
+          新規登録
+    

@@ -1,0 +1,16 @@
+%header
+  = render "shares/header"
+%main
+  .sessions-wrapper
+    .sessions-wrapper__form
+      %h1 ログイン画面
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          %p Email
+          = f.email_field :email, placeholder: "例）abc@abc.com", autofocus: true, autocomplete: "email", required: true
+        .field
+          %p Password
+          = f.password_field :password, placeholder: "例）abc123", autocomplete: "current-password", required: true
+        .actions
+          = f.submit "ログイン", id:"new__submit-btn"
+      = render "devise/shared/links"
