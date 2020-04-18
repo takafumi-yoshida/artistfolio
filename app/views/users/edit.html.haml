@@ -35,7 +35,7 @@
           %label{for:"user_image"}
             #artist_information__image
               -if @user.image.present?
-                -# = image_tag @user.image
+                = image_tag @user.image.url
               -else
                 = image_tag "/images/sad.jpg"
           = f.file_field :image, class:"image-hidden"

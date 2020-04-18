@@ -42,7 +42,10 @@
               %span 
                 = @user.activityBase
         #artist_information__image
-          = image_tag "/images/sad.jpg"
+          -if @user.image.present?
+            = image_tag @user.image.url
+          -else
+            = image_tag "/images/sad.jpg"
       #artist_introduction
         #artist_introduction__box
           = @user.introduction

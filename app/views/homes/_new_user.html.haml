@@ -1,0 +1,9 @@
+= link_to user_path(user.id) do
+  .new_user
+    .new_user__image
+      -if user.image.present?
+        = image_tag user.image.url
+      -else
+        = image_tag "/images/sad.jpg"
+    %p{class:"new_user__artistname"}
+      = user.artistname

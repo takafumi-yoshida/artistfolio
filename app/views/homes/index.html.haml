@@ -43,40 +43,9 @@
     .home-index_wrapper__container
       .new_users
         %p{class:"new_users__title"}
-          New Users
+          New Artist
         .new_users__table
-          .new_user
-            .new_user__image
-              = image_tag "/images/sad.jpg"
-            %p{class:"new_user__artistname"}
-              魚目　さちお
-          .new_user
-            .new_user__image
-              = image_tag "/images/sad.jpg"
-            %p{class:"new_user__artistname"}
-              Lastage
-          .new_user
-            .new_user__image
-              = image_tag "/images/sad.jpg"
-            %p{class:"new_user__artistname"}
-              無名の新人
-
-          .new_user
-            .new_user__image
-              = image_tag "/images/sad.jpg"
-            %p{class:"new_user__artistname"}
-              ああああああああああ
-          
-          .new_user
-            .new_user__image
-              = image_tag "/images/sad.jpg"
-            %p{class:"new_user__artistname"}
-              ああああああああああ
-          .new_user
-            .new_user__image
-              = image_tag "/images/sad.jpg"
-            %p{class:"new_user__artistname"}
-              ああああああああああ
+          = render partial: "new_user", collection: @new_users, as: "user"
 
 
 
