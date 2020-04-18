@@ -28,6 +28,13 @@ check_client_connection false
 
 run_once = true
 
+
+root = "/var/www/artistfolio/current"
+
+before_exec do |server|
+  ENV['BUNDLE_GEMFILE'] = "#{root}/Gemfile"
+end
+
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) &&
     ActiveRecord::Base.connection.disconnect!
