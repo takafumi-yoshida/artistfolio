@@ -19,7 +19,7 @@
             %ul{id:"information__lists"}
               %li{class:"infomation_list", id:"information__lists__0"} 
                 %p Name : 
-                = f.text_field :realname, pattern: "^([a-zA-Z ]{1,14}|([ぁ-ゞ一-龠｡-ﾟァ-ヶー　]{1,10}))$", title: "全角10文字以内 もしくは 半角14文字以内で入力して下さい。",maxlength: "14",placeholder: "本名を入力してください（任意）", autocomplete: "off",id: "real_name"
+                = f.text_field :realname, pattern: "^([a-zA-Z ]{1,18}|([ぁ-ゞ一-龠｡-ﾟァ-ヶー　]{1,10}))$", title: "全角10文字以内 もしくは 半角18文字以内で入力して下さい。",maxlength: "18",placeholder: "本名を入力してください（任意）", autocomplete: "off",id: "real_name"
               %li{class:"infomation_list", id:"information__lists__1"} 
                 %p Age :
                 = f.text_field :age, pattern: "^([0-9]{1,3})$", title: "半角数字(3桁以内)で入力してください",maxlength: "3",placeholder: "年齢を入力して下さい（任意）", autocomplete: "off",id: "age"
@@ -32,8 +32,13 @@
               %li{class:"infomation_list", id:"information__lists__4"} 
                 %p ActivityBase : 
                 = f.text_field :activityBase,maxlength: "12",placeholder: "活動拠点を入力して下さい（任意）", autocomplete: "off",id: "activityBase"
-          #artist_information__image
-            = image_tag "https://cdn.pixabay.com/photo/2019/10/23/20/40/landscape-4572804__480.jpg"
+          %label{for:"user_image"}
+            #artist_information__image
+              -if @user.image.present?
+                -# = image_tag @user.image
+              -else
+                = image_tag "/images/sad.jpg"
+          = f.file_field :image, class:"image-hidden"
         #artist_introduction
           #artist_introduction__box
             = f.text_area :introduction,placeholder: "好きなことをご自由にお書き下さい。",rows: "13", autocomplete: "off",id: "introduction"

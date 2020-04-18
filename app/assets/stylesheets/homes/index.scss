@@ -1,4 +1,6 @@
 .home-index_wrapper {
+  
+  height: 1500px;
   &__slide {
     max-width: 100%;
     margin: 0 auto;
@@ -6,6 +8,7 @@
     border: 1px solid rgb(5, 5, 5);
     box-sizing: border-box;
     background-color: rgb(10, 10, 10);
+    
     .slide-show {
       height: 300px;
       width: 80%;
@@ -60,6 +63,61 @@
           }
         }
 
+    }
+  }
+  &__container {
+    // border: 1px solid red;
+    padding-top: 40px;
+    .new_users  {
+      // border: 1px solid red;
+      &__title {
+        // border: 1px solid red;
+        font-size: 25px;
+        width: 13%;
+        text-align: center;
+        color: rgb(184, 180, 172);
+        border-bottom: 1px solid rgb(184, 180, 172);
+        margin-left: 50px;
+        font-family: 'Crimson Text', serif;
+      }
+      &__table {
+        // border: 1px solid red;
+        display: flex;
+        height: 280px;
+        margin-top: 10px;
+        padding: 10px 0 0 60px;
+        box-sizing: border-box;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .new_user {
+          min-width: 300px;
+          margin-right: 15px;
+          &__image {
+            text-align: center;
+            height: 200px;
+            background-color: rgb(34, 33, 33);
+            // border: 1px solid red;
+            border-radius: 5px 5px 0px 0px;
+            img {
+              min-width: 100px;
+              max-width: 300px;
+              height: 200px;
+              border-radius: 5px 5px 0px 0px;
+            }
+          }
+          &__artistname {
+            font-size: 15px;
+            text-align: center;
+            line-height: 50px;
+            letter-spacing: 2px;
+            background-color: rgb(15, 15, 15);
+            border-radius: 0px 0px 5px 5px;
+          //  border: 1px solid red;
+          }
+        }
+      }
     }
   }
 }

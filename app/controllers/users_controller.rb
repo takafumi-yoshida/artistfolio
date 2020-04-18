@@ -33,6 +33,7 @@ class UsersController < ApplicationController
     redirect_to edit_user_path(current_user.id) unless @user.id === current_user.id
   end
   def user_params
-    params.require(:user).permit(:artistname, :realname, :age, :profession, :birthplace, :activityBase, :introduction)
+    params.require(:user).permit(:artistname, :realname, :age, :profession, :birthplace, :activityBase, :introduction, :image)
   end
+  
 end

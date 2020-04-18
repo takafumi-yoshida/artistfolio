@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_04_17_105325) do
     t.string "birthplace"
     t.string "activityBase"
     t.text "introduction"
+    t.string "image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

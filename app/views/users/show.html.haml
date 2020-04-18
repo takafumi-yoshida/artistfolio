@@ -9,10 +9,11 @@
         %li{class:"side_list", id:"side_list1"} Galleries
         %li{class:"side_list", id:"side_list2"} News
         %li{class:"side_list", id:"side_list3"} Contact
-        -if @user.id == current_user.id
-          %li{class:"side_list", id:"side_list4"} 
-            = link_to edit_user_path do
-              edit
+        -if current_user.present?
+          -if @user.id == current_user.id
+            %li{class:"side_list", id:"side_list4"} 
+              = link_to edit_user_path,id: "edit_btn" do
+                edit
       %p{id:"side_artistfolio-logo"} 
         = link_to root_path do
           @artistfolio
@@ -41,7 +42,7 @@
               %span 
                 = @user.activityBase
         #artist_information__image
-          = image_tag "https://cdn.pixabay.com/photo/2019/10/23/20/40/landscape-4572804__480.jpg"
+          = image_tag "/images/sad.jpg"
       #artist_introduction
         #artist_introduction__box
           = @user.introduction
