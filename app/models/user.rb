@@ -14,7 +14,6 @@ class User < ApplicationRecord
   end
 
     validates :realname,       length: { maximum: 18 }
-    validates :age,            length: { maximum: 3 }, format: {with: /\A[0-9]{3}\z/}
     validates :profession,     length: { maximum: 12 }
     validates :birthplace,     length: { maximum: 12 }
     validates :activityBase,   length: { maximum: 12 }

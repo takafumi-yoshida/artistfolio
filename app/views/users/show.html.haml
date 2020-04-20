@@ -3,20 +3,7 @@
     %p{id: "artist_show__header__artist_name"} 
       = @user.artistname
   #artist_show__main
-    #artist_show__main__side
-      %ul{id:"side_lists"}
-        %li{class:"side_list", id:"side_list0"} Home
-        %li{class:"side_list", id:"side_list1"} Galleries
-        %li{class:"side_list", id:"side_list2"} News
-        %li{class:"side_list", id:"side_list3"} Contact
-        -if current_user.present?
-          -if @user.id == current_user.id
-            %li{class:"side_list", id:"side_list4"} 
-              = link_to edit_user_path,id: "edit_btn" do
-                edit
-      %p{id:"side_artistfolio-logo"} 
-        = link_to root_path do
-          @artistfolio
+    = render "shares/side"
     #artist_show__main__center
       #artist_information
         #artist_information__text

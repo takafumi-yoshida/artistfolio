@@ -1,3 +1,25 @@
+
+@mixin fornameemail {
+  width: 300px;
+  height: 30px;
+  padding-left: 5px;
+  &::placeholder {
+    font-size: 13px;
+  }
+}
+@mixin forpassword {
+  width: 300px;
+  height: 30px;
+  padding-left: 5px;
+  letter-spacing: 8px;
+  font-weight: 900;
+  &::placeholder {
+    letter-spacing: 0px;
+    font-size: 13px;
+    font-weight: 100;
+  }
+}
+
 .regustratins-wrapper{
   width: 100vw;
   height: 100vh;
@@ -29,44 +51,16 @@
       .field{
         margin: 30px;
         #user_artistname {
-          width: 300px;
-          height: 30px;
-          padding-left: 5px;
-          &::placeholder {
-            font-size: 13px;
-          }
+          @include fornameemail();
         }
         #user_email {
-          width: 300px;
-          height: 30px;
-          padding-left: 5px;
-          &::placeholder {
-            font-size: 13px;
-          }
+          @include fornameemail();
         }
         #user_password{
-          width: 300px;
-          height: 30px;
-          padding-left: 5px;
-          letter-spacing: 8px;
-          font-weight: 900;
-          &::placeholder {
-            letter-spacing: 0px;
-            font-size: 13px;
-            font-weight: 100;
-          }
+          @include forpassword();
         }
         #user_password_confirmation {
-          width: 300px;
-          height: 30px;
-          padding-left: 5px;
-          letter-spacing: 8px;
-          font-weight: 900;
-          &::placeholder {
-            letter-spacing: 0px;
-            font-size: 13px;
-            font-weight: 100;
-          }
+          @include forpassword();
         }
       }
       #new__submit-btn {
