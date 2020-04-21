@@ -4,6 +4,9 @@
   .sessions-wrapper
     .sessions-wrapper__form
       %h1 ログイン画面
+      -if alert
+        %span{class:"error_messages"}
+          EmailとPasswordが一致しません。
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
           %p Email

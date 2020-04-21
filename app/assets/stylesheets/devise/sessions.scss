@@ -18,7 +18,11 @@
       font-weight: bold;
       border-bottom: 1px solid white;
     }
-
+    .error_messages {
+      display: block;
+      margin: 30px auto 0;
+      text-align: center;
+    }
     .new_user {
       width: 400px;
       height: 300px;

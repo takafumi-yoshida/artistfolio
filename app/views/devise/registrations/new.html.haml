@@ -7,9 +7,20 @@
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         .field
           %p Artist name
+          -if @user.errors.full_messages_for(:artistname)
+            - @user.errors.full_messages_for(:artistname).each do |message|
+              %span{class:"error_messages"}
+                (この
+                = message
+                )
           = f.text_field :artistname, pattern: "^([a-zA-Z0-9｡-ﾟ -\/:-@\[-`\{-\~ぁ-ゞ一-龠｡-ﾟァ-ヶー　]{1,10})$", title: "10文字以内で入力して下さい。", placeholder: "例）Potatochip（10文字以内）", autofocus: true, autocomplete: "artistname", required: true
         .field
           %p Email
+          -if @user.errors.full_messages_for(:email)[1]
+            %span{class:"error_messages"}
+              (この
+              = @user.errors.full_messages_for(:email)[1]
+              )
           = f.email_field :email, placeholder: "例）abc@abc.com", autofocus: true, autocomplete: "email", required: true
         .field
           %p Password
