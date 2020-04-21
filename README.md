@@ -10,14 +10,14 @@ http://18.177.222.221/
 - password：aaaaaaaa
 
 ### ログイン時のサンプル画像
-<!-- - トップページ
-![トップページ](https://user-images.githubusercontent.com/59679612/77407844-24826b80-6dfa-11ea-9886-d2d0ce670d38.png)
-- 日記投稿ページ
-![日記投稿ページ](https://user-images.githubusercontent.com/59679612/77409389-8643d500-6dfc-11ea-89da-c75cc1f7f25b.png)
-- 日記一覧ページ
-![日記一覧ページ](https://user-images.githubusercontent.com/59679612/77407954-5693cd80-6dfa-11ea-84b7-eeac34383903.png)
-- マイページ
-![マイページ](https://user-images.githubusercontent.com/59679612/77408024-6e6b5180-6dfa-11ea-81d2-49bca9d4a32b.png) -->
+- トップページ
+![トップページ](https://user-images.githubusercontent.com/59679612/79818485-e52c4800-83c2-11ea-8a66-b541d185f8de.png)
+- アーティスト一覧ページ
+![アーティスト一覧ページ](https://user-images.githubusercontent.com/59679612/79818755-83201280-83c3-11ea-889f-e911d69f66bb.png)
+- アーティスト詳細ページ
+![アーティスト詳細ページ](https://user-images.githubusercontent.com/59679612/79818839-ae0a6680-83c3-11ea-9921-4c906b6f7154.png)
+- アーティスト編集ページ
+![アーティスト編集ページ](https://user-images.githubusercontent.com/59679612/79818898-d003e900-83c3-11ea-9433-3b01d493c3bf.png)
 # 特徴
 
 - 自分の作品が手軽に投稿できる。他人の作品を手軽に楽しめる。
