@@ -1,10 +1,17 @@
 #artist_edit
   = form_with model:@user, local:true do |f|
     #artist_edit__header
-      %p{id: "artist_edit__header__artist_name"} 
-        = f.text_field :artistname, pattern: "^([a-zA-Z0-9｡-ﾟ -\/:-@\[-`\{-\~ぁ-ゞ一-龠｡-ﾟァ-ヶー　]{1,10})$", title: "10文字以内で入力して下さい。", maxlength: "10", autocomplete: "off",required: true
-      %h1{id: "artist_edit__header__title"} 
-        Edit Page
+      #artist_edit__header__artist_name
+        = f.text_field :artistname, pattern: "^([a-zA-Z0-9｡-ﾟ -\/:-@\[-`\{-\~ぁ-ゞ一-龠｡-ﾟァ-ヶー　]{1,10})$", title: "10文字以内で入力して下さい。", placeholder: "例）Potatochip（10文字以内）", maxlength: "10", required: true
+      #artist_edit__header__right
+        %p{class:"error_messages"}
+          -if @user.errors.full_messages_for(:artistname)
+            - @user.errors.full_messages_for(:artistname).each do |message|
+              (この
+              = message
+              )
+        %h1{id: "artist_edit__header__right__title"}
+          Edit Page
     #artist_edit__main
       #artist_edit__main__side
         #side_artistfolio-btn
