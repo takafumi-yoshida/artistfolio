@@ -1,6 +1,6 @@
 #new_gallery
   #new_gallery__header
-    =link_to user_path(current_user.id),id:"new_gallery__header__artist_name" do
+    =link_to user_path(current_user.id),id:"new_gallery__header__artist_name", class:"#{current_user.id}" do
       = @user.artistname
     #new_gallery__header__right
       %h1{id: "new_gallery__header__right__title"}

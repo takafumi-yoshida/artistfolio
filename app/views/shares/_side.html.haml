@@ -7,10 +7,10 @@
     -if current_user.present?
       -if @user.id == current_user.id
         %li{class:"side_list", id:"side_list4"} 
-          = link_to new_gallery_path do
+          = link_to new_gallery_path, class:"my_list" do
             Create
         %li{class:"side_list", id:"side_list5"} 
-          = link_to edit_user_path(current_user.id) do
+          = link_to edit_user_path(current_user.id), class:"my_list" do
             User edit
   %p{id:"side_artistfolio-logo"} 
     = link_to root_path do

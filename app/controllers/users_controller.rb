@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :user_find, only:[:show, :edit, :update]
   before_action :identity_verification, only: [:edit, :update]
   def show
-
+    @galleries = @user.galleries
   end
   
   def edit

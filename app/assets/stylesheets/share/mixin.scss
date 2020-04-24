@@ -32,9 +32,13 @@
         margin-top: 50px;
         white-space: nowrap;
       }
-      #side_list5 {
-         white-space: nowrap;
-      }
+      .my_list {
+        white-space: nowrap;
+        color: rgb(77, 26, 131);
+        &:active {
+          color: red;
+        }
+     }
       .side_list {
         width: 40%;
         font-size: 28px;

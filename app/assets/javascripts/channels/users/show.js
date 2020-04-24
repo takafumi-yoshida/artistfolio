@@ -1,15 +1,17 @@
 $(function(){
   let imgWidth = 0;
   let totalWidth = 0;
-  let boxSize = $("#galleries_box").width();
   let wrapIndex = 0;
 
   let widthChange = function(){ 
-
+    let boxSize = $("#galleries_box").width();
     $(".gallery").each(function(index){
+      
       imgWidth = $(`#gallery__img_${index}`).css('width');
+      console.log(imgWidth);
       $(this).css("max-width",`${imgWidth}`);
       totalWidth += parseInt(imgWidth);
+      console.log(totalWidth)
       $(this).addClass(`wrap_${wrapIndex}`);
       if(totalWidth > boxSize){
         $(this).removeClass(`wrap_${wrapIndex}`);
@@ -17,10 +19,12 @@ $(function(){
         wrapIndex += 1;
         $(this).addClass(`wrap_${wrapIndex}`);
         totalWidth = parseInt(imgWidth);
-      }else if(totalWidth > (boxSize*80)/100){
-        $(`.wrap_${wrapIndex}`).wrapAll('<div class="change_center">');
-        wrapIndex += 1;
-        totalWidth = parseInt(imgWidth);
+        console.log(totalWidth)
+      // }else if(totalWidth > (boxSize*90)/100){
+      //   $(`.wrap_${wrapIndex}`).wrapAll('<div class="change_center">');
+      //   wrapIndex += 1;
+      //   totalWidth = parseInt(imgWidth);
+      // }
       }
     });
   }

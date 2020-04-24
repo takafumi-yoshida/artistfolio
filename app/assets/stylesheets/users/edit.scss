@@ -130,21 +130,22 @@
         font-size: 15px;
         width: 100%;
         margin: 0 auto;
-        
         #introduction {
-          width: 70%;
-          height: 100%;
+          width: 100%;
+          padding: 23px 20% 0 10%;
           background-color: $mainColor;
+          border: 1px;
           color: white;
           resize: none;
-          padding: 50px 0 0 100px;
           border: none;
           cursor: pointer;
           white-space: pre-wrap;
+          box-sizing: border-box;
           &::placeholder{
             font-size: 15px;
             color: rgba(255, 255, 255, 0.952);
           }
+        
         }
       }
     }

@@ -1,10 +1,12 @@
 $(function(){
 
+  let $class = $("#new_gallery__header__artist_name").attr('class')
   let transition_time = 2000;
   let time_between_slides = 10000;
+  
   let defSrc = $("#gallery_0_photo").attr('src');
   let count = 9;
-
+  
   let createHtml = function(){
      label = $('<label/>',{
       for: `${count}_photo`,
@@ -21,14 +23,14 @@ $(function(){
       id: `gallery_${count}_photo`,
       src: `${defSrc}`
     })
-
+    
     input = $("<input/>",{
       name: `gallery[gallery_images_attributes][${count}][photo]`,
       class: "hidden-field",
       id: `${count}_photo` ,
       type: "file"
 
-    })
+    });
 
     p.append(i);
     label.append(p);
@@ -40,27 +42,29 @@ $(function(){
     count += 1;
 
   };
-
+  
   createHtml();
+  
   let moveScreen = function(){
 
-    let screen = $('#slide_screen');
-    let slideImage = $(".screen_image");
+    // let screen = $('#slide_screen');
+    // let slideImage = $(".screen_image");
     let index = 0;
     let num = -1;
+    
+    // function slideScreen() {
+    //   return screen.find(slideImage).first();
+    // }
 
-    function slideScreen() {
-      return screen.find(slideImage).first();
-    }
 
-
-
+    
+    
    let interval = setInterval(function(){
     if(($(".screen_image").length) <= 1){
       clearInterval(interval)
     }
     $(".screen_image").fadeOut(transition_time);
-
+    
     if(index >= $(".screen_image").length + num){
       index = 0;
       num = -1;
@@ -109,6 +113,7 @@ $(function(){
           src: `${image}`
         });
       }else {
+        
         let imgHtml = $('<img />',{
           id:`${id}_screen`,
           class: `screen_image for_delete_${id}`,
@@ -137,6 +142,9 @@ $(function(){
 
   $(".create_btn").click(function(){
     if (!($(".screen_image").length)) {
+      if (confirm('保存されませんがよろしいですか？（TTitleまたは画像を挿入してください）')) {
+        window.location.href = `/users/${$class}` ;
+      }
       return false;
     };
   });

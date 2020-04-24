@@ -41,55 +41,12 @@
             = @user.introduction
       #artist_show__main__center__galleries{class:"center_swicth"}
         #galleries_box
-          .gallery{id:"gallery_0"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_0"
-            %p{class:"gallery__title"}
-              アロンソ
-          .gallery{id:"gallery_1"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_1"
-            %p{class:"gallery__title"}
-              アロンソ
-          .gallery{id:"gallery_2"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_2"
-            %p{class:"gallery__title"}
-              アロンソ
-          .gallery{id:"gallery_3"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_3"
-            %p{class:"gallery__title"}
-              アロンソaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          .gallery{id:"gallery_4"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_4"
-            %p{class:"gallery__title"}
-              アロンソ
-          .gallery{id:"gallery_5"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_5"
-            %p{class:"gallery__title"}
-              アロンソ 
-          .gallery{id:"gallery_6"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_6"
-            %p{class:"gallery__title"}
-              アロンソ
-          .gallery{id:"gallery_7"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_7"
-            %p{class:"gallery__title"}
-              アロンソ
-          .gallery{id:"gallery_8"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_8"
-            %p{class:"gallery__title"}
-              アロンソ
-          .gallery{id:"gallery_9"}
-            .gallery__image
-              = image_tag "https://cdn.pixabay.com/photo/2020/04/17/09/16/fantasy-5053972_1280.jpg",id:"gallery__img_9"
-            %p{class:"gallery__title"}
-              アロンソ
-        =link_to new_gallery_path, id:"to_create" do
-          Create Gallery
+          -@galleries.each_with_index do |gallery,index|
+            -# = binding.pry
+            - firstImage = gallery.gallery_images.first
+            .gallery{id:"gallery_#{index}"}
+              .gallery__image
+                -if firstImage.present? 
+                  = image_tag firstImage.photo.url,id:"gallery__img_#{index}"
+              %p{class:"gallery__title"}
+                = gallery.title

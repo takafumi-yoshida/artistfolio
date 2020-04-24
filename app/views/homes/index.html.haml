@@ -4,42 +4,16 @@
   .home-index_wrapper
     .home-index_wrapper__slide
       %ul{class:"slide-show js-slider"}
-        %li{class:"slide" , id:"slide0"}
-          .slide__center
-            .slide__center__photo
-              = image_tag "https://cdn.pixabay.com/photo/2017/11/29/09/15/paint-2985569_1280.jpg"
-            .slide__center__info
-              %p{class:"slide__center__info__title"} Artist name
-              %p{class:"slide__center__info__name"}無名の新人
-        %li{class:"slide", id:"slide1"}
-          .slide__center
-            .slide__center__photo
-              = image_tag "https://cdn.pixabay.com/photo/2016/02/16/22/13/ship-1204156__480.jpg"
-            .slide__center__info
-              %p{class:"slide__center__info__title"} Artist name
-              %p{class:"slide__center__info__name"}MURAKAWA KAZUYA
-        %li{class:"slide", id:"slide2"}
-          .slide__center
-            .slide__center__photo
-              = image_tag "https://cdn.pixabay.com/photo/2016/11/08/05/40/actor-1807557__480.jpg"
-            .slide__center__info
-              %p{class:"slide__center__info__title"} Artist name
-              %p{class:"slide__center__info__name"}wakame soup
-        %li{class:"slide", id:"slide3"}
-          .slide__center
-            .slide__center__photo
-              = image_tag "https://cdn.pixabay.com/photo/2016/05/10/02/09/sad-girl-1382940_1280.jpg"
-            .slide__center__info
-              %p{class:"slide__center__info__title"} Artist name
-              %p{class:"slide__center__info__name"}potato chip
-        %li{class:"slide", id:"slide4"}
-          .slide__center
-            .slide__center__photo
-              = image_tag "https://cdn.pixabay.com/photo/2018/07/15/23/22/prague-3540883__480.jpg"
-            .slide__center__info
-              %p{class:"slide__center__info__title"} Artist name
-              %p{class:"slide__center__info__name"}ジョンソンジョン
-
+        - @randomGalleries.each_with_index do |gallery, index|
+          - firstImage = gallery.gallery_images.first
+          %li{class:"slide" , id:"slide#{index}"}
+            .slide__center
+              .slide__center__photo
+                = image_tag firstImage.photo.url
+              .slide__center__info
+                %p{class:"slide__center__info__title"} Artist name
+                %p{class:"slide__center__info__name"}
+                  = gallery.user.artistname
     .home-index_wrapper__container
       .new_users
         %p{class:"new_users__title"}
