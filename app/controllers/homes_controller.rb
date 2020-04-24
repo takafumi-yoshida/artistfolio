@@ -5,7 +5,7 @@ class HomesController < ApplicationController
   end
 
   def index
-    @new_users = User.first(10)
+    @new_users = User.limit(10).order(id: :desc)
   end
 
   private

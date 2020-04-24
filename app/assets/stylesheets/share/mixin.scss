@@ -1,0 +1,105 @@
+@mixin share_header {
+  height: 100%;
+  width: 100%;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    padding: 10px 10% 0px;
+    box-sizing: border-box;
+    border-bottom: 2px solid gray;
+    &__artist_name {
+      font-size: 40px;
+      color: rgb(250, 245, 245);
+      white-space: nowrap;
+    }
+  }
+}
+
+@mixin share_side__a {
+  display: flex;
+  width: 100%;
+  margin: 0 auto; 
+  padding-top: 20px;
+  #artist_share__main__side {
+    margin-top: 30px;
+    width: 20%;
+    height: 600px;
+    #side_lists {
+      margin-top: 50px;
+      box-sizing: border-box;
+      #side_list4 {
+        margin-top: 50px;
+        white-space: nowrap;
+      }
+      #side_list5 {
+         white-space: nowrap;
+      }
+      .side_list {
+        width: 40%;
+        font-size: 28px;
+        font-family: 'Comic Neue', cursive;
+        margin: 20px 0 0 50%;
+        color: rgb(248, 213, 98); 
+        #edit_btn {
+          color: rgb(214, 23, 214);
+          &:active {
+            color: red;
+          }
+        }
+        cursor: pointer;
+        &:active {
+          color: rgb(172, 98, 13);
+        }
+      }
+    }
+    #side_artistfolio-logo {
+      font-size: 15px;
+      margin-top: 230px;
+      a {
+        margin-left: 50%;
+        color: rgba(194, 63, 63, 0.856);
+        border-bottom: 1px solid rgba(194, 63, 63, 0.856);
+      } 
+    }
+  }
+}
+@mixin share_side__b {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  &__side {
+    margin-top: 30px;
+    width: 20%;
+    height: 600px;
+    #side_artistfolio-btn {
+      display: block;
+      margin-left: 80px;
+      text-align: center;
+      line-height: 400px;
+      height: 372px;
+      font-size: 130px;
+      label {
+        border-radius: 100px;
+        i {
+          color: rgb(145, 120, 75);
+          cursor: pointer;
+          &:hover {
+            color: rgb(184, 150, 88);
+          }
+        }
+      }
+    }
+    #side_artistfolio-logo {
+      margin-top: 230px;
+      font-size: 15px;
+      a {
+        margin-left: 50%;
+        color: rgba(194, 63, 63, 0.856);
+        border-bottom: 1px solid rgba(194, 63, 63, 0.856);
+      }
+      
+    }
+  }
+}

@@ -7,8 +7,6 @@ $(function(){
       reader.readAsDataURL(file);
       reader.onload = function(){
         var image = this.result;
-
-        console.log(image)
         $("#artist_information__image").html(html);
         $("#user_icon").attr('src',`${image}`);
         

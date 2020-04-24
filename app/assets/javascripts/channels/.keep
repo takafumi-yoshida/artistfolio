@@ -1,0 +1,17 @@
+$(".create_btn").click(function(){
+    if (!($(".screen_image").length)) {
+      return false;
+    }
+  })
+
+  if (!($(".screen_image").length)) {
+        $("#image_error").css('display','block')
+      }
+
+      $("#image_error").css('display','none')
+
+      if($(".screen_image").length == 1 ){
+        $(`#${id}_screen`).css("display", "block")
+      }else if($(".screen_image").length == 2 ){
+        moveScreen();
+      };
