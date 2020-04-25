@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root "homes#top"
   resources :homes, only: [:index]
   resources :users, only:[:show, :edit, :update]
-  resources :galleries, only:[:new, :create]
+  resources :galleries, only:[:new, :create, :show]
 end

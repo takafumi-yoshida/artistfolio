@@ -92,8 +92,9 @@
             justify-content: center;
           }
           .gallery {
-            box-sizing: borCder-box;
+            color: white;
             margin: 0 10px 10px 0;
+            box-shadow: 0.3em 0.3em 0.3em black;
             &__image{
               max-height: 151px;
               text-align: center;
@@ -108,7 +109,7 @@
               display: block;
               background-color: black;
               padding: 0 30px;
-              line-height: 40px;
+              line-height: 30px;
               text-align: center;
               overflow: hidden;
               text-overflow: ellipsis;

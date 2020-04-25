@@ -1,0 +1,34 @@
+%header
+  = render "shares/header"
+%main
+  .gallery_show_wrapper
+    .gallery_show_wrapper__slide
+      %ul{class:"slide-show js-slider"}
+        - @images.each_with_index do |image, index|
+          %li{class:"slide" , id:"slide#{index}"}
+            .slide__center
+              .slide__center__photo
+                = image_tag image.photo.url
+    .gallery_show_wrapper__container
+      .show_images
+        .show_images__table
+          - @images.each_with_index do |image, index|
+            .show_image
+              .show_image__image{id:"#{index}"}
+                = image_tag image.photo.url
+          %p{class:"empty_box"}
+      .gallery_information
+        .gallery_information__left
+          .gallery_information__left__artistname
+            %span 作者名：
+            = link_to user_path(@gallery.user.id) do
+              %P  
+                = @gallery.user.artistname        
+          .gallery_information__left__title
+            %span 作品名：
+            %p 
+              = @gallery.title
+        .gallery_information__right
+          = @gallery.explanatory
+        %span{class:"gallery_information__btn"}
+          全文を表示する

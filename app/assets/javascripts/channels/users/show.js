@@ -8,10 +8,10 @@ $(function(){
     $(".gallery").each(function(index){
       
       imgWidth = $(`#gallery__img_${index}`).css('width');
-      console.log(imgWidth);
+    
       $(this).css("max-width",`${imgWidth}`);
       totalWidth += parseInt(imgWidth);
-      console.log(totalWidth)
+     
       $(this).addClass(`wrap_${wrapIndex}`);
       if(totalWidth > boxSize){
         $(this).removeClass(`wrap_${wrapIndex}`);
@@ -19,7 +19,7 @@ $(function(){
         wrapIndex += 1;
         $(this).addClass(`wrap_${wrapIndex}`);
         totalWidth = parseInt(imgWidth);
-        console.log(totalWidth)
+       
       // }else if(totalWidth > (boxSize*90)/100){
       //   $(`.wrap_${wrapIndex}`).wrapAll('<div class="change_center">');
       //   wrapIndex += 1;

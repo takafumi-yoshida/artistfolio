@@ -27,7 +27,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             img {
-              max-width: 700px;
+              max-width: 900px;
               min-height: 100%;;
               max-height: 100%;
             }
@@ -44,7 +44,6 @@
               font-family: $mainFont;
               font-size: 18px;
               font-weight: 900;
-              
               padding-left: 10px;
             }
             &__name {
@@ -64,7 +63,7 @@
     }
   }
   &__container {
-    padding-top: 40px;
+    padding-top: 30px;
     .new_users  {
       &__title {
         font-size: 25px;
@@ -76,9 +75,8 @@
         font-family: 'Crimson Text', serif;
       }
       &__table {
+        height: 230px;
         display: flex;
-        height: 280px;
-        margin-top: 10px;
         padding: 10px 0 0 60px;
         box-sizing: border-box;
         overflow-x: scroll;
@@ -87,28 +85,24 @@
         }
 
         a {
-          width: 300px;
-          height: 250px;
+          height: 195px;
           margin-right: 15px;
+          box-shadow: 0.3em 0.3em 0.3em black;
           .new_user {
-            max-width: 300px;
             &__image {
               text-align: center;
-              height: 200px;
+              height: 151px;
               background-color: rgb(34, 33, 33);
               border-radius: 5px 5px 0px 0px;
               img {
-                min-width: 100px;
-                max-width: 300px;
-                height: 200px;
+                height: 150px;
                 border-radius: 5px 5px 0px 0px;
               }
             }
             &__artistname {
-              
               font-size: 15px;
               text-align: center;
-              line-height: 50px;
+              line-height: 40px;
               letter-spacing: 2px;
               background-color: rgb(15, 15, 15);
               border-radius: 0px 0px 5px 5px;

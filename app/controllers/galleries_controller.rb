@@ -1,8 +1,10 @@
 class GalleriesController < ApplicationController
+
   def new
     @gallery = Gallery.new
     @user = User.find(current_user.id)
   end
+
   def create
    @gallery = Gallery.new(gallery_params)
    if @gallery.save
@@ -10,6 +12,11 @@ class GalleriesController < ApplicationController
    else
     render :new
    end
+  end
+
+  def show
+    @gallery = Gallery.find(params[:id])
+    @images = @gallery.gallery_images
   end
 
   def gallery_params

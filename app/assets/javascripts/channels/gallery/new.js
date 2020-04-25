@@ -79,10 +79,10 @@ $(function(){
           if(num >= 100){
             index = 0;
             num = -1;
-            console.log(num)
+           
             break;
           }
-          console.log(num)
+         
         };
       };
       $(`#${index}_photo_screen`).fadeIn(transition_time); 
@@ -142,7 +142,7 @@ $(function(){
 
   $(".create_btn").click(function(){
     if (!($(".screen_image").length)) {
-      if (confirm('保存されませんがよろしいですか？（TTitleまたは画像を挿入してください）')) {
+      if (confirm('保存されませんがよろしいですか？（作品名もしくは画像を挿入してください）')) {
         window.location.href = `/users/${$class}` ;
       }
       return false;

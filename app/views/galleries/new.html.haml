@@ -16,7 +16,7 @@
     #new_gallery__main__center
       #create_gallery
         = form_with model:@gallery, local:true do |f|
-          = f.text_field :title, maxlength:"20",placeholder: "Title:", title: "２0文字以内で入力してください", autocomplete: "off", id: "create_gallery__title", required: true
+          = f.text_field :title, maxlength:"15",placeholder: "作品名:", title: "15文字以内で入力してください", autocomplete: "off", id: "create_gallery__title", required: true
           #create_gallery__images
             #create_gallery__images__screen
               #slide_screen

@@ -42,9 +42,8 @@
       #artist_show__main__center__galleries{class:"center_swicth"}
         #galleries_box
           -@galleries.each_with_index do |gallery,index|
-            -# = binding.pry
             - firstImage = gallery.gallery_images.first
-            .gallery{id:"gallery_#{index}"}
+            = link_to gallery_path(gallery.id) ,id:"gallery_#{index}", class:"gallery" do
               .gallery__image
                 -if firstImage.present? 
                   = image_tag firstImage.photo.url,id:"gallery__img_#{index}"
