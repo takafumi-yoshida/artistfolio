@@ -6,9 +6,7 @@
       %ul{class:"slide-show js-slider"}
         - @images.each_with_index do |image, index|
           %li{class:"slide" , id:"slide#{index}"}
-            .slide__center
-              .slide__center__photo
-                = image_tag image.photo.url
+            = image_tag image.photo.url
     .gallery_show_wrapper__container
       .show_images
         .show_images__table

@@ -28,21 +28,11 @@
         display: none;
         height: 100%;
         background-color: black;
-        &__center {
-          margin: 0 auto;
-          height: 100%;
-          display: flex;
-          &__photo {
-            margin: 0 auto;
-            height: 100%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            img {
-              max-width: 600px;
-              min-height: 100%;;
-              max-height: 100%;
-            }
-          }
+        text-align: center;
+        img {
+          max-width: 1200px;
+          min-height: 100%;;
+          max-height: 100%;
         }
       }
     }
