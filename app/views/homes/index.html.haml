@@ -7,13 +7,18 @@
         - @randomGalleries.each_with_index do |gallery, index|
           - firstImage = gallery.gallery_images.first
           %li{class:"slide" , id:"slide#{index}"}
-            .slide__contents
-              .slide__contents__photo
-                = image_tag firstImage.photo.url
-              .slide__contents__info
-                %p{class:"slide__contents__info__title"} 作者名
-                %p{class:"slide__contents__info__name"}
-                  = gallery.user.artistname
+            = link_to gallery_path(gallery.id) do
+              .slide__contents
+                .slide__contents__photo
+                  = image_tag firstImage.photo.url
+                .slide__contents__info
+                  %p{class:"slide__contents__info__title"} 作品名
+                  %p{class:"slide__contents__info__name"}
+                    = gallery.title
+                  %p{class:"slide__contents__info__artistname"}
+                    %span
+                      作者： 
+                    = gallery.user.artistname
     .home-index_wrapper__container
       .new_users
         %p{class:"new_users__title"}
