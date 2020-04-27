@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  before_action :get_gallery, only:[:show, :edit, :update, :destroy]
+  before_action :get_gallery, only:[:show, :edit, :destroy]
 
   def new
     @gallery = Gallery.new
