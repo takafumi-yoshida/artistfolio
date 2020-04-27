@@ -78,7 +78,7 @@
         }
       } 
       &__galleries {
-        display: none;
+        // display: none;
         margin-top: 10px;
         #galleries_box {
           margin-top: 30px;
@@ -92,13 +92,42 @@
             justify-content: center;
           }
           .gallery {
+            position: relative;
             color: white;
             margin: 0 10px 10px 0;
             box-shadow: 0.3em 0.3em 0.3em black;
             opacity: 0.7;
-              &:hover {
-                opacity: 1;
-              } 
+            &__btn {
+              position: absolute;
+              right: 10px;
+              top: 10px;
+              #trash {
+                padding: 8px;
+                font-size: 15px;
+                color: white;
+                background-color: rgb(34, 33, 33);
+                border-radius: 30px;
+                &:hover {
+                  color: rgba(78, 45, 14, 0.856);
+                }
+              }
+              // #edit {
+              //   padding: 8px;
+              //   font-size: 15px;
+              //   color: white;
+              //   background-color: rgb(34, 33, 33);
+              //   border-radius: 30px;
+              //   &:hover {
+              //     color: rgba(78, 45, 14, 0.856);
+              //   }
+              // }
+            }
+            &:hover {
+              opacity: 1;
+            } 
+            #show_link {
+              color: white;
+            }
             &__image{
               max-height: 151px;
               text-align: center;

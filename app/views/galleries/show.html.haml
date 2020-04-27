@@ -3,6 +3,8 @@
 %main
   .gallery_show_wrapper
     .gallery_show_wrapper__slide
+      -# .gallery_show_wrapper__slide__btn
+      -#   = icon 'fas', 'angle-double-down'
       %ul{class:"slide-show js-slider"}
         - @images.each_with_index do |image, index|
           %li{class:"slide" , id:"slide#{index}"}

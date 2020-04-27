@@ -43,9 +43,16 @@
         #galleries_box
           -@galleries.each_with_index do |gallery,index|
             - firstImage = gallery.gallery_images.first
-            = link_to gallery_path(gallery.id) ,id:"gallery_#{index}", class:"gallery" do
-              .gallery__image
-                -if firstImage.present? 
-                  = image_tag firstImage.photo.url,id:"gallery__img_#{index}"
-              %p{class:"gallery__title"}
-                = gallery.title
+            .gallery{id:"gallery_#{index}",class:"for__delete_#{index}"}
+              .gallery__btn
+                -if gallery.user.id == current_user.id
+                  =link_to gallery_path(gallery.id), data:"本当に『#{gallery.title}』を削除してよろしいですか？", method:"DELETE", remote: true, id:"delete_#{index}",class:"delete_btn" do
+                    = icon "fas", "trash-alt",id:"trash"
+                -# =link_to edit_gallery_path(gallery.id) do
+                -#   = icon "fas", "edit", id:"edit"
+              = link_to gallery_path(gallery.id), id:"show_link" do
+                .gallery__image
+                  -if firstImage.present? 
+                    = image_tag firstImage.photo.url,id:"gallery__img_#{index}"
+                %p{class:"gallery__title"}
+                  = gallery.title

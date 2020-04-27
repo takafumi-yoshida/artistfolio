@@ -23,7 +23,5 @@ $(function(){
       btn.text('全文を表示する');
       index = 0;
     }
-    
-    
   });
 });

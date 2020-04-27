@@ -20,10 +20,10 @@ $(function(){
 
         if ($i == slides().length - 1){
           $i = 0 
-          console.log($i)
+          
         } else{
           $i += 1
-          console.log($i)
+          
         }
   
         let interval = setTimeout(function(){

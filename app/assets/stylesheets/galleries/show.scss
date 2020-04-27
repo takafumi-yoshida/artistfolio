@@ -12,12 +12,23 @@
 
 .gallery_show_wrapper {
   &__slide {
+    position: relative;
     max-width: 100%;
     margin: 0 auto;
     padding: 10px 0;
     border: 1px solid rgb(5, 5, 5);
     box-sizing: border-box;
     background-color: rgb(10, 10, 10);
+    &__btn {
+      position: absolute;
+      top: 20px;
+      right: 2%;
+      font-size: 1rem;
+      padding: 0 2%;
+      color:rgb(200, 100, 80);;
+      border: 2px solid rgb(200, 100, 80);
+      border-radius: 5px;
+    }
     .slide-show {
       height: 300px;
       width: 80%;
@@ -86,6 +97,7 @@
         width: 30%;
         min-height: 180px;
         border-right: 1px solid rgb(85, 85, 85);
+        
         &__title {
           @include show_left();
         }
@@ -95,7 +107,7 @@
             width: 70%;
             color: white;
             :hover {
-              color: rgb(223, 126, 126);
+              color: rgb(230, 168, 168);
             }
           }
           p {

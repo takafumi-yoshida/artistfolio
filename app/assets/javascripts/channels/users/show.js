@@ -1,4 +1,6 @@
 $(function(){
+
+  // { 画像を整列させるためのjs
   let imgWidth = 0;
   let totalWidth = 0;
   let wrapIndex = 0;
@@ -19,12 +21,6 @@ $(function(){
         wrapIndex += 1;
         $(this).addClass(`wrap_${wrapIndex}`);
         totalWidth = parseInt(imgWidth);
-       
-      // }else if(totalWidth > (boxSize*90)/100){
-      //   $(`.wrap_${wrapIndex}`).wrapAll('<div class="change_center">');
-      //   wrapIndex += 1;
-      //   totalWidth = parseInt(imgWidth);
-      // }
       }
     });
   }
@@ -45,5 +41,17 @@ $(function(){
       if(imgWidth === 0) {
         widthChange()
       };
+    });
+
+
+    // { ギャラリー削除のためのjs
+    $(".delete_btn").click(function(){
+       data = $(this).attr('data');
+       if(confirm(`${data}`)){
+          id = $(this).attr('id')
+          $(`.for__${id}`).css('display', 'none') 
+       }else {
+         return false;
+       }
     });
 });
