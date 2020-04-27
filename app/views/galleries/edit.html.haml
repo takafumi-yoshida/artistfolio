@@ -1,40 +1,40 @@
-#new_gallery
-  #new_gallery__header
-    =link_to user_path(current_user.id),id:"new_gallery__header__artist_name", class:"#{current_user.id}" do
-      = @user.artistname
-    #new_gallery__header__right
-      %h1{id: "new_gallery__header__right__title"}
-        Gallery Create
-  #new_gallery__main
-    #new_gallery__main__side
-      #side_artistfolio-btn
-        %label{for:"submit_btn"}
-          = icon 'fas', 'arrow-circle-left'
-      %p{id:"side_artistfolio-logo"} 
-        = link_to root_path do
-          @artistfolio
-    #new_gallery__main__center
-      #create_gallery
-        = form_with model:@gallery, local:true do |f|
-          = f.text_field :title, maxlength:"15",placeholder: "作品名:", title: "15文字以内で入力してください", autocomplete: "off", id: "create_gallery__title", required: true
-          #create_gallery__images
-            #create_gallery__images__screen
-              #slide_screen
-                %p{id:"image_error"}
-                  画像を挿入してください
-                = image_tag "",id:"def_img"
-            #create_gallery__images__contents
+-# #new_gallery
+-#   #new_gallery__header
+-#     =link_to user_path(current_user.id),id:"new_gallery__header__artist_name", class:"#{current_user.id}" do
+-#       = @user.artistname
+-#     #new_gallery__header__right
+-#       %h1{id: "new_gallery__header__right__title"}
+-#         Gallery Create
+-#   #new_gallery__main
+-#     #new_gallery__main__side
+-#       #side_artistfolio-btn
+-#         %label{for:"submit_btn"}
+-#           = icon 'fas', 'arrow-circle-left'
+-#       %p{id:"side_artistfolio-logo"} 
+-#         = link_to root_path do
+-#           @artistfolio
+-#     #new_gallery__main__center
+-#       #create_gallery
+-#         = form_with model:@gallery, local:true do |f|
+-#           = f.text_field :title, maxlength:"15",placeholder: "作品名:", title: "15文字以内で入力してください", autocomplete: "off", id: "create_gallery__title", required: true
+-#           #create_gallery__images
+-#             #create_gallery__images__screen
+-#               #slide_screen
+-#                 %p{id:"image_error"}
+-#                   画像を挿入してください
+-#                 = image_tag "",id:"def_img"
+-#             #create_gallery__images__contents
               
-              #add_images
-                = f.fields_for :gallery_images, @gallery.gallery_images do |i|
-                  = i.check_box :_destroy, class: "hidden-checkbox"
-                  - 9.times do |timesCount|
-                    %label{for:"#{timesCount}_photo",class:"for_delete_#{timesCount}_photo"}
-                      %p{id:"delete_#{timesCount}_photo",class:"hidden-delete"}
-                        = icon 'fas', 'trash-alt'
-                      = image_tag "/images/sad.jpg", id:"gallery_#{timesCount}_photo"
-                      = i.file_field :photo,name:"gallery[gallery_images_attributes][#{timesCount}][photo]", id:"#{timesCount}_photo" ,class:"hidden-field"
-          #create_gallery__explanatory
-            = f.text_area :explanatory, placeholder: "好きなことをご自由にお書き下さい。", rows: "13", autocomplete: "off", maxlength: "1000", id:"gallery__explanatory"
-          =f.submit id:"submit_btn",class:"create_btn hidden-field"
+-#               #add_images
+-#                 = f.fields_for :gallery_images, @gallery.gallery_images do |i|
+-#                   = i.check_box :_destroy, class: "hidden-checkbox"
+-#                   - 9.times do |timesCount|
+-#                     %label{for:"#{timesCount}_photo",class:"for_delete_#{timesCount}_photo"}
+-#                       %p{id:"delete_#{timesCount}_photo",class:"hidden-delete"}
+-#                         = icon 'fas', 'trash-alt'
+-#                       = image_tag "/images/sad.jpg", id:"gallery_#{timesCount}_photo"
+-#                       = i.file_field :photo,name:"gallery[gallery_images_attributes][#{timesCount}][photo]", id:"#{timesCount}_photo" ,class:"hidden-field"
+-#           #create_gallery__explanatory
+-#             = f.text_area :explanatory, placeholder: "好きなことをご自由にお書き下さい。", rows: "13", autocomplete: "off", maxlength: "1000", id:"gallery__explanatory"
+-#           =f.submit id:"submit_btn",class:"create_btn hidden-field"
                       

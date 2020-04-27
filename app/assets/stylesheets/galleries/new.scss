@@ -18,6 +18,7 @@
       overflow: scroll;
       width: 80%;
       #create_gallery {
+        margin-top: 50px;
         &__title {
           display: block;
           width: 50%;
@@ -39,24 +40,25 @@
             width: 90%;
             margin: 0 auto;
             padding: 10px;
-            // border: 1px solid red;
-            text-align: center;
             background-color: rgb(10, 10, 10);
+            text-align: center;
             #slide_screen {
               width: 80%;
               margin: 0 auto;
               background-color: black;
               padding-top: 15px;
-              min-height: 220px;
+              min-height: 210px;
               #image_error {
                 margin-top: 80px;
                 color: rgb(255, 255, 255);
                 text-align: center;
                 padding: 10px;
+                
               }
               img{
                 margin: 0px auto;
-                max-height: 210px;
+                height: 200px;
+
               }
             } 
           }
