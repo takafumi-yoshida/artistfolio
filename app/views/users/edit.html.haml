@@ -2,6 +2,7 @@
   = form_with model:@user, local:true do |f|
     #artist_edit__header
       #artist_edit__header__artist_name
+        
         = f.text_field :artistname, pattern: "^([a-zA-Z0-9｡-ﾟ -\/:-@\[-`\{-\~ぁ-ゞ一-龠｡-ﾟァ-ヶー　]{1,10})$", title: "10文字以内で入力して下さい。", placeholder: "例）Potatochip（10文字以内）", maxlength: "10", required: true
       #artist_edit__header__right
         %p{class:"error_messages"}

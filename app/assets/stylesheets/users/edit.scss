@@ -4,6 +4,7 @@
   padding-top: 8px;
   margin-left: 10px;
   background-color: $mainColor;
+  letter-spacing: 1px;
   font-family: $mainFont;
   cursor: pointer;
   &::placeholder{
@@ -21,16 +22,17 @@
     padding: 10px 10% 0px;
     box-sizing: border-box;
     border-bottom: 2px solid gray;
-    display: flex;
     &__artist_name {
-      font-size: 40px;    
+      width: 400px;
+      font-size: 40px; 
       #user_artistname {
         color: white;
-        border: none;
         width: 400px;
+        border: none;
         cursor: pointer;
         background-color: $mainColor;
         margin-right: 10px;
+        box-sizing: border-box;
         &::placeholder {
           color: white;
           font-size: 13px;
