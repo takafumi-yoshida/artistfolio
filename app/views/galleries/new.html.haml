@@ -34,6 +34,6 @@
                       = image_tag "/images/sad.jpg", id:"gallery_#{timesCount}_photo"
                       = i.file_field :photo,name:"gallery[gallery_images_attributes][#{timesCount}][photo]", id:"#{timesCount}_photo" ,class:"hidden-field"
           #create_gallery__explanatory
-            = f.text_area :explanatory, placeholder: "好きなことをご自由にお書き下さい。", rows: "13", autocomplete: "off", maxlength: "1000", id:"gallery__explanatory"
+            = f.text_area :explanatory, placeholder: "ご自由にお書き下さい。", rows: "13", autocomplete: "off", maxlength: "1000", id:"gallery__explanatory"
           =f.submit id:"submit_btn",class:"create_btn hidden-field"
                       

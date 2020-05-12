@@ -30,11 +30,12 @@ $(function(){
       $(".center_swicth").css('display','none');
       $(".heading").css('display','none');
       $("#artist_show__main__center__home").css('display','block');
-    })
+    });
 
     $("#side_list1").click(function(){
       
       $(".center_swicth").css('display','none');
+      $(".heading").css('display','none');
       $("#artist_show__main__center__galleries").css('display','block');
       $(".heading").css('display','block');
 
@@ -42,6 +43,21 @@ $(function(){
         widthChange()
       };
     });
+
+    $("#side_list2").click(function(){
+      
+      $(".center_swicth").css('display','none');
+      $(".heading").css('display','none');
+      $("#artist_show__main__center__news").css('display','block');
+    });
+
+    $("#write_news").click(function(){
+      $("#write_news_box").fadeIn(1000);
+    });
+    $("#cancel_btn").click(function(){
+      $("#write_news_box").fadeOut(1000);
+    });
+
 
 
     // { ギャラリー削除のためのjs

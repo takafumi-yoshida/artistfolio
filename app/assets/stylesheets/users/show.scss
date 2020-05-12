@@ -1,7 +1,3 @@
-.center_swicth {
-  display: none;
-}
-
 #artist_show {
   @include share_header();
   .heading {
@@ -159,25 +155,88 @@
         
       }
       &__news {
-        display: block;
-        padding-top: 50px;
+        position: relative;
+        display: none;
+        padding-top: 70px;
         padding-left: 30px;
         #news_box {
           display: flex;
-          width: 80%;
+           width: 80%;
           border-bottom: 1px solid rgba(255, 255, 255, 0.226);
           &__date {
-            width: 100px;
+            width: 130px;
             padding: 25px 0 10px 30px;
             letter-spacing: 1px;
           }
           &__content {
             padding-bottom: 10px;
-
-            width: calc(100% - 150px);
+            width: calc(85% - 150px);
             word-wrap: break-word;
             white-space: pre-wrap;
-            
+          }
+        }
+        #write_news {
+          position: absolute;
+          top: 10px;
+          right: 20%;
+          padding: 10px;
+          color: rgb(5, 220, 220);
+          border: 1px solid rgb(5, 220, 220);
+          background-color: rgba(224, 238, 238, 0.3);
+          cursor: pointer;
+          &:hover {
+            opacity: 1;
+            background-color: rgba(224, 238, 238, 0.5);
+          }
+        }
+        #write_news_box {
+          position: fixed;
+          display: none;
+          top: 60vh; 
+          border: 1px solid rgb(125, 125, 125);
+          width: 55%;
+          height: 245px;
+          border-radius: 5px;
+          background-color: rgba(84, 88, 88, 0.9);
+          &__form {
+            position: relative;
+            display: flex;
+            height: 150px;
+            margin-top: 40px;
+            #news_date {
+              width: 100px;
+              height: 25px;
+              margin: 0 20px;
+              text-align: center;
+              border-radius: 5px;
+            }
+            #news_content {
+              
+              width: 75%;
+              height: 150px;
+              resize: none;
+              border-radius: 5px;
+              border: none;
+              padding: 10px;
+              box-sizing: border-box ;
+            }
+            &__submit {
+              display: block;
+              position: absolute;
+              bottom: -40px;
+              right: 50px;
+              width: 100px;
+              border-radius: 5px;
+            }
+          }
+          #cancel_btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            line-height: 25px;
+            border-radius: 5px;
+            cursor: pointer;
           }
         }
       }

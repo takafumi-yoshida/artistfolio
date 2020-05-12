@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :identity_verification, only: [:edit, :update]
   def show
     @galleries = @user.galleries
+    @news = News.new()
+    @many_news = News.where(user_id: params[:id]).order(date: :DESC)
   end
   
   def edit
