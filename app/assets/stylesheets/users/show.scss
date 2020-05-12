@@ -155,6 +155,12 @@
         
       }
       &__news {
+        #none_news {
+          margin-top: 80px;
+          font-size: 30px;
+          color: darkgrey;
+          padding-left: 20%;
+        }
         position: relative;
         display: none;
         padding-top: 70px;
@@ -165,7 +171,7 @@
           border-bottom: 1px solid rgba(255, 255, 255, 0.226);
           &__date {
             width: 130px;
-            padding: 25px 0 10px 30px;
+            padding: 25px 0 0px 30px;
             letter-spacing: 1px;
           }
           &__content {
@@ -173,6 +179,7 @@
             width: calc(85% - 150px);
             word-wrap: break-word;
             white-space: pre-wrap;
+
           }
         }
         #write_news {
@@ -193,11 +200,11 @@
           position: fixed;
           display: none;
           top: 60vh; 
-          border: 1px solid rgb(125, 125, 125);
+          border: 3px solid rgb(44, 43, 43);
           width: 55%;
-          height: 245px;
-          border-radius: 5px;
-          background-color: rgba(84, 88, 88, 0.9);
+          height: 240px;
+          border-radius: 10px;
+          background-color: rgba(105, 98, 91, 0.95);
           &__form {
             position: relative;
             display: flex;
@@ -211,7 +218,6 @@
               border-radius: 5px;
             }
             #news_content {
-              
               width: 75%;
               height: 150px;
               resize: none;
@@ -224,7 +230,7 @@
               display: block;
               position: absolute;
               bottom: -40px;
-              right: 50px;
+              right: 70px;
               width: 100px;
               border-radius: 5px;
             }
@@ -232,7 +238,7 @@
           #cancel_btn {
             position: absolute;
             top: 10px;
-            right: 20px;
+            right: 30px;
             font-size: 20px;
             line-height: 25px;
             border-radius: 5px;

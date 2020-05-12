@@ -58,19 +58,22 @@
                 %p{class:"gallery__title"}
                   = gallery.title
       #artist_show__main__center__news{class:"center_swicth"}
+        -if @many_news.empty?
+          %p{id:"none_news"} None News
         -@many_news.each do |news|
           #news_box
             %p{id:"news_box__date"}
               = news.date
             %p{id:"news_box__content"}
               = news.content
-        -if @user.id == current_user.id
-          %p{id:"write_news"}
-            Write news
-            =icon 'fas','pencil-alt'
+        -if user_signed_in?
+          -if @user.id == current_user.id
+            %p{id:"write_news"}
+              Write news
+              =icon 'fas','pencil-alt'
         #write_news_box
           = form_with model: @news, id:"write_news_box__form" ,local:true do |f|
-            = f.text_field :date ,placeholder: "2020/12/31", maxlength: 10, pattern:"[0-9\x20/-]{1,10}", title: "半角数字10文字以内で入力してください。半角スペースや半角スラッシュ,半角ハイフンはお使いできます。" 
+            = f.text_field :date ,placeholder: "2020/12/31", maxlength: 10, pattern:"[0-9\x20/-]{1,10}", title: "半角数字10文字以内で入力してください。半角スペースや半角スラッシュ,半角ハイフンはお使いできます。", required: true
             = f.text_area :content  ,placeholder: "ご自由にお書き下さい。", required: true
             = f.submit value:"POST", id:"write_news_box__form__submit"
           %p{id:"cancel_btn"}×
