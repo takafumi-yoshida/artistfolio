@@ -43,12 +43,12 @@
         #galleries_box
           -@galleries.each_with_index do |gallery,index|
             - firstImage = gallery.gallery_images.first
-            .gallery{id:"gallery_#{index}",class:"for__delete_#{index}"}
+            .gallery{id:"gallery_#{index}",class:"for__delete_#{index}_gallery"}
               .gallery__btn
                 -if user_signed_in?
                   -if gallery.user.id == current_user.id
-                    =link_to gallery_path(gallery.id), data:"本当に『#{gallery.title}』を削除してよろしいですか？", method:"DELETE", remote: true, id:"delete_#{index}",class:"delete_btn" do
-                      = icon "fas", "trash-alt",id:"trash"
+                    =link_to gallery_path(gallery.id), data:"本当に『#{gallery.title}』を削除してよろしいですか？", method:"DELETE", remote: true, id:"delete_#{index}_gallery",class:"delete_btn" do
+                      = icon "fas", "trash-alt",class:"trash"
                   -# =link_to edit_gallery_path(gallery.id) do
                   -#   = icon "fas", "edit", id:"edit"
               = link_to gallery_path(gallery.id), id:"show_link" do
@@ -59,13 +59,19 @@
                   = gallery.title
       #artist_show__main__center__news{class:"center_swicth"}
         -if @many_news.empty?
-          %p{id:"none_news"} None News
-        -@many_news.each do |news|
-          #news_box
-            %p{id:"news_box__date"}
+          -unless @user.id == current_user.id
+            %p{id:"none_news"} None News
+        -@many_news.each_with_index do |news,index|
+          .news_box{class:"for__delete_#{index}_news"}
+            %p{class:"news_box__date"}
               = news.date
-            %p{id:"news_box__content"}
+            %p{class:"news_box__content"}
               = news.content
+            .news_box__btn
+              -if user_signed_in?
+                -if news.user_id == current_user.id
+                  =link_to news_path(news.id), data:"本当に『#{news.date}』の記事を削除してよろしいですか？", method:"DELETE", id:"delete_#{index}_news", remote: true,class:"delete_btn" do
+                    = icon "fas", "trash-alt",class:"trash"
         -if user_signed_in?
           -if @user.id == current_user.id
             %p{id:"write_news"}

@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   resources :homes, only: [:index]
   resources :users, only:[:show, :edit, :update]
   resources :galleries, only:[:new, :create, :show, :edit, :destroy]
-  resources :news, only: [:create]
-  # binding.pry
+  resources :news, only: [:create, :destroy]
 end

@@ -5,6 +5,11 @@ class NewsController < ApplicationController
     end
   end
 
+  def destroy
+    @news = News.find(params[:id])
+    @news.destroy
+  end
+
 private
 
   def news_params
