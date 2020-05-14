@@ -67,7 +67,7 @@
     .new_users  {
       &__title {
         font-size: 25px;
-        width: 150px;
+        width: 160px;
         text-align: center;
         color: rgb(184, 180, 172);
         border-bottom: 1px solid rgb(184, 180, 172);
@@ -89,6 +89,58 @@
           margin-right: 15px;
           box-shadow: 0.3em 0.3em 0.3em black;
           .new_user {
+            opacity: 0.7;
+              &:hover {
+                opacity: 1;
+              } 
+            &__image {
+              text-align: center;
+              height: 151px;
+              background-color: rgb(34, 33, 33);
+              border-radius: 5px 5px 0px 0px;  
+              img {
+                height: 150px;
+                border-radius: 5px 5px 0px 0px;
+              }
+            }
+            &__artistname {
+              font-size: 15px;
+              text-align: center;
+              line-height: 40px;
+              letter-spacing: 2px;
+              background-color: rgb(15, 15, 15);
+              border-radius: 0px 0px 5px 5px;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .new_arts  {
+      &__title {
+        font-size: 25px;
+        width: 150px;
+        text-align: center;
+        color: rgb(184, 180, 172);
+        border-bottom: 1px solid rgb(184, 180, 172);
+        margin-left: 50px;
+        font-family: 'Crimson Text', serif;
+      }
+      &__table {
+        height: 230px;
+        display: flex;
+        padding: 10px 0 0 60px;
+        box-sizing: border-box;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        a {
+          height: 195px;
+          margin-right: 15px;
+          box-shadow: 0.3em 0.3em 0.3em black;
+          .new_art {
             opacity: 0.7;
               &:hover {
                 opacity: 1;

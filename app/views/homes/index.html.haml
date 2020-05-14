@@ -22,9 +22,14 @@
     .home-index_wrapper__container
       .new_users
         %p{class:"new_users__title"}
-          New Artist
+          New Artists
         .new_users__table
           = render partial: "new_user", collection: @new_users, as: "user"
+      .new_arts
+        %p{class:"new_arts__title"}
+          New Arts
+        .new_arts__table
+          = render partial: "new_art", collection: @new_arts, as: "art"
 
 
 

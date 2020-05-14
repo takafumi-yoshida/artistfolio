@@ -6,7 +6,8 @@ class HomesController < ApplicationController
 
   def index
     @randomGalleries = Gallery.order("RAND()").limit(30).includes(:user)
-    @new_users = User.limit(10).order(id: :desc)
+    @new_users = User.limit(15).order(id: :desc)
+    @new_arts = Gallery.limit(30).order(id: :desc)
   end
 
   private
