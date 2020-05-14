@@ -1,10 +1,10 @@
 = link_to gallery_path(art.id) do
-  .new_art
-    .new_art__image
+  .main_table
+    .main_table__image
       - firstImage = art.gallery_images.first
       -if firstImage.photo.url.present?
         =image_tag firstImage.photo.url
       -else
         = image_tag "/images/sad.jpg"
-    %p{class:"new_art__artistname"}
+    %p{class:"main_table__name"}
       = art.title
