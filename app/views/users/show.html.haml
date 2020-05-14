@@ -59,8 +59,7 @@
                   = gallery.title
       #artist_show__main__center__news{class:"center_swicth"}
         -if @many_news.empty?
-          -unless @user.id == current_user.id
-            %p{id:"none_news"} None News
+          %p{id:"none_news"} None News
         -@many_news.each_with_index do |news,index|
           .news_box{class:"for__delete_#{index}_news"}
             %p{class:"news_box__date"}
