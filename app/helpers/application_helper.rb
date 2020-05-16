@@ -1,11 +1,11 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: 'Artistfolio',
-      title: 'アーティストフォリオ',
+      site: site.meta_tag.name,
+      title: site.meta_tag.title,
       reverse: false,
       charset: 'utf-8',
-      description: 'アート（只今、写真のみ）の閲覧、投稿サービス。写真集を作ることもでき、スライドショーで楽しむことができます。また、ポートフォリオとしてもお使いいただけます。あなたも自分の作った作品アップロードして、世界中のみんなに共有してみませんか？',
+      description: site.meta_tag.description,
       keywords: 'Art,Artist,Photo,Gallery',
       canonical: request.original_url,
       separator: '|',
@@ -13,9 +13,9 @@ module ApplicationHelper
         { href: image_url('/favicon.ico') },
       ],
       og: {
-        site_name: 'Artistfolio',
-        title: 'アーティストフォリオ',
-        description: 'アート（只今、写真のみ）の閲覧、投稿サービス。写真集を作ることもでき、スライドショーで楽しむことができます。また、ポートフォリオとしてもお使いいただけます。あなたも自分の作った作品アップロードして、世界中のみんなに共有してみませんか？', 
+        site_name: site.meta_tag.name,
+        title: site.meta_tag.title,
+        description: site.meta_tag.description, 
         type: 'website',
         url: request.original_url,
         image: image_url('/sample.png'),
