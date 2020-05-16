@@ -3,9 +3,9 @@ module ApplicationHelper
     {
       site: 'Artistfolio',
       title: 'アーティストフォリオ',
-      reverse: true,
+      reverse: false,
       charset: 'utf-8',
-      description: 'Art（只今、写真のみ）の投稿、閲覧サービス。写真集を作ることもでき、スライドショーで楽しむことができます。また、ポートフォリオとしてもお使いいただけます。',
+      description: 'Art（只今、写真のみ）の閲覧、投稿サービス。写真集を作ることもでき、スライドショーで楽しむことができます。また、ポートフォリオとしてもお使いいただけます。あなたも自分の作った作品アップロードして、世界中のみんなに共有してみませんか？',
       keywords: 'Art,Artist,Photo,Gallery',
       canonical: request.original_url,
       separator: '|',
@@ -15,7 +15,7 @@ module ApplicationHelper
       og: {
         site_name: 'Artistfolio',
         title: 'アーティストフォリオ',
-        description: 'Art（只今、写真のみ）の投稿、閲覧サービス。写真集を作ることもでき、スライドショーで楽しむことができます。また、ポートフォリオとしてもお使いいただけます。', 
+        description: 'Art（只今、写真のみ）の閲覧、投稿サービス。写真集を作ることもでき、スライドショーで楽しむことができます。また、ポートフォリオとしてもお使いいただけます。あなたも自分の作った作品アップロードして、世界中のみんなに共有してみませんか？', 
         type: 'website',
         url: request.original_url,
         image: image_url('/sample.png'),
